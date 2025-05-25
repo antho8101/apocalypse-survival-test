@@ -83,6 +83,9 @@ applyTranslations();
 // === Navigation
 document.getElementById("start-button").addEventListener("click", () => {
   sfx.start.play();
+  sfx.result.play();
+  sfx.result.pause();
+  sfx.result.currentTime = 0;
   screens.welcome.classList.add("hidden");
   screens.question.classList.remove("hidden");
   startQuiz();
@@ -116,6 +119,7 @@ function showQuestion(index) {
     const btn = document.createElement("button");
     btn.classList.add("answer-button");
     btn.innerText = translatedQ.answers[i];
+    btn.style.color = "#76ff03"; // vert clair par défaut
     btn.addEventListener("click", () => {
       applyEffects(answer.effect);
       blurAllButtons();
