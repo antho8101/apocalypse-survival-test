@@ -214,3 +214,11 @@ select {
 .card-glow {
   animation: cardGlow 1.2s ease-out;
 }
+
+/* Désactive le style actif/focus sur mobile */
+.answer-button:focus,
+.answer-button:active {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}

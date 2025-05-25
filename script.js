@@ -118,10 +118,15 @@ function showQuestion(index) {
     btn.innerText = translatedQ.answers[i];
     btn.addEventListener("click", () => {
       applyEffects(answer.effect);
+      blurAllButtons();
       nextQuestion();
     });
     container.appendChild(btn);
   });
+}
+
+function blurAllButtons() {
+  document.querySelectorAll(".answer-button").forEach(btn => btn.blur());
 }
 
 function applyEffects(effect) {
