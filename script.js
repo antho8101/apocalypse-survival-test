@@ -188,11 +188,11 @@ function showResult() {
   const dominant = getDominantProfile(scores);
 
   const profileImages = {
-    physique: "assets/images/fighter.png",
-    logic: "assets/images/strategist.png",
-    social: "assets/images/charmer.png",
-    mental: "assets/images/survivor.png",
-    multiple: "assets/images/lonewolf.png"
+    physique: "assets/images/fighter.jpg",
+    logic: "assets/images/strategist.jpg",
+    social: "assets/images/charmer.jpg",
+    mental: "assets/images/survivor.jpg",
+    multiple: "assets/images/lonewolf.jpg"
   };
 
   const profiles = {
