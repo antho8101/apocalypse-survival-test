@@ -121,7 +121,6 @@ function showQuestion(index) {
     btn.innerText = translatedQ.answers[i];
     btn.style.color = "#76ff03"; // vert clair par défaut
     btn.addEventListener("click", () => {
-      triggerVibration(20);
       applyEffects(answer.effect);
       blurAllButtons();
       nextQuestion();
@@ -177,7 +176,6 @@ function getDominantProfile(scores) {
 function showResult() {
   sfx.result.volume = 0.5;
   sfx.result.play();
-  triggerVibration(60);
 
   screens.result.classList.remove("hidden");
 
@@ -209,18 +207,16 @@ function showResult() {
     multiple: "The Lone Wolf 🐺"
   };
 
-  const profile = profiles[dominant] || "The Lone Wolf 🐺";
+  const profile = profiles[dominant] || profiles.multiple;
   const image = profileImages[dominant] || profileImages.multiple;
 
   document.getElementById("result-illustration").src = image;
 
   const card = document.getElementById("result-card");
-card.classList.remove("card-glow"); // reset
-void card.offsetWidth;              // force reflow
-card.classList.add("card-glow");
+  card.classList.remove("card-glow");
+  void card.offsetWidth;
+  card.classList.add("card-glow");
 
-  document.getElementById("result-time").innerText = t.result + " " + duration;
-  document.getElementById("result-profile").innerText = `${t.profile}: ${profile}`;
   document.getElementById("card-result").innerText = `${t.result} ${duration}`;
   document.getElementById("card-profile").innerText = `${t.profile}: ${profile}`;
 }
@@ -230,23 +226,17 @@ document.getElementById("share-button").addEventListener("click", () => {
   const img = document.getElementById("result-illustration");
 
   if (!img.complete || img.naturalHeight === 0) {
-    // L’image n’est pas encore chargée
     img.onload = () => captureCard(card);
   } else {
-    // L’image est prête
     captureCard(card);
   }
 });
 
 function captureCard(card) {
-  // Sauvegarde les styles d’origine
   const prevClass = card.className;
   card.classList.remove("card-glow");
-
-  // Force un reflow pour garantir que les styles sont bien appliqués
   void card.offsetWidth;
 
-  // Petite pause pour que l’effet soit visuellement retiré avant capture
   setTimeout(() => {
     html2canvas(card).then(canvas => {
       const link = document.createElement("a");
@@ -254,7 +244,6 @@ function captureCard(card) {
       link.href = canvas.toDataURL("image/png");
       link.click();
 
-      // Restaure les classes d’origine (glow, etc.)
       card.className = prevClass;
     });
   }, 50);
@@ -267,12 +256,5 @@ function refreshCurrentQuestion() {
     applyTranslations();
   } else if (!screens.result.classList.contains("hidden")) {
     showResult();
-  }
-}
-
-function triggerVibration(duration = 30) {
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  if (!isIOS && "vibrate" in navigator) {
-    navigator.vibrate(duration);
   }
 }
