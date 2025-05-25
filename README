@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme-banner.jpg" alt="SurvivorMeter Banner" width="100%" />
+  <img src="Readme-files/banner-survival-test.jpg" alt="SurvivorMeter Banner" width="100%" />
 </p>
 
 <h1 align="center">🧟‍♂️ SurvivorMeter</h1>
@@ -47,8 +47,9 @@
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="assets/screens/survivor-card.jpg" alt="Result card" width="300px"/>
-  <img src="assets/screens/charmer-card.jpg" alt="Charmer Profile" width="300px"/>
+  <img src="Readme-files/screenshot1.jpeg" alt="Welcome Screen" width="300px"/>
+  <img src="Readme-files/screenshot2.jpeg" alt="Questions" width="300px"/>
+  <img src="Readme-files/screenshot3.jpeg" alt="Result Card" width="300px"/>
 </p>
 
 ---
