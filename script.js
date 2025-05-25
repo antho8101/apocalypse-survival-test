@@ -271,7 +271,8 @@ function refreshCurrentQuestion() {
 }
 
 function triggerVibration(duration = 30) {
-  if ("vibrate" in navigator) {
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  if (!isIOS && "vibrate" in navigator) {
     navigator.vibrate(duration);
   }
 }
