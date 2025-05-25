@@ -6,7 +6,7 @@
 <p align="center">How long would <em>you</em> survive after the collapse?</p>
 
 <p align="center">
-  <a href="https://survivormeter.vercel.app" target="_blank">
+  <a href="https://www.survivormeter.com/" target="_blank">
     <img src="https://img.shields.io/badge/Play Now-76ff03?style=for-the-badge&logo=appletv&logoColor=black" alt="Play Now" />
   </a>
 </p>
