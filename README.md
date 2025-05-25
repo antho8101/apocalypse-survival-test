@@ -17,7 +17,7 @@
 
 **SurvivorMeter** is a fast, stylish and mobile-first personality test that reveals how long you'd survive in a post-apocalyptic world.
 
-- Answer 5 brutal questions
+- Answer 7 brutal questions
 - Discover your survival archetype
 - Get a shareable result card
 - Challenge your friends 👀
@@ -31,7 +31,7 @@
 - **HTML / CSS / Vanilla JS**
 - Mobile-first UX
 - `html2canvas` for social-ready screenshots
-- Audio + animation + localization (EN/FR)
+- Audio + animation + localization (EN/FR/ES/RU/中文)
 
 ---
 
