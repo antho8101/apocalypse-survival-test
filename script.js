@@ -121,6 +121,7 @@ function showQuestion(index) {
     btn.innerText = translatedQ.answers[i];
     btn.style.color = "#76ff03"; // vert clair par défaut
     btn.addEventListener("click", () => {
+      triggerVibration(20);
       applyEffects(answer.effect);
       blurAllButtons();
       nextQuestion();
@@ -176,6 +177,7 @@ function getDominantProfile(scores) {
 function showResult() {
   sfx.result.volume = 0.5;
   sfx.result.play();
+  triggerVibration(60);
 
   screens.result.classList.remove("hidden");
 
@@ -265,5 +267,11 @@ function refreshCurrentQuestion() {
     applyTranslations();
   } else if (!screens.result.classList.contains("hidden")) {
     showResult();
+  }
+}
+
+function triggerVibration(duration = 30) {
+  if ("vibrate" in navigator) {
+    navigator.vibrate(duration);
   }
 }
