@@ -1,7 +1,7 @@
 const translations = {
   en: {
     title: "How long would you survive?",
-    subtitle: "Find out in 5 quick questions.",
+    subtitle: "Find out in 7 quick questions.",
     start: "Start the test",
     questionPrefix: "Question",
     result: "You'd survive",
@@ -27,12 +27,21 @@ const translations = {
       {
         text: "What’s your survival strategy?",
         answers: ["Build a shelter and stay put", "Keep moving", "Find people and create a group"]
+      },
+      {
+        text: "You find a wounded ally slowing down the group. Do you…",
+        answers: ["Leave them behind", "Help them walk", "Carry them yourself"]
+      },
+      {
+        text: "A storm is coming. You haven’t found shelter yet. Do you…",
+        answers: ["Climb a tree and wait it out", "Dig into the ground", "Keep walking through it"]
       }
     ]
   },
+
   fr: {
     title: "Combien de temps tu survivrais ?",
-    subtitle: "Découvre-le en 5 questions rapides.",
+    subtitle: "Découvre-le en 7 questions rapides.",
     start: "Commencer le test",
     questionPrefix: "Question",
     result: "Tu survivrais",
@@ -58,6 +67,134 @@ const translations = {
       {
         text: "Ta stratégie de survie ?",
         answers: ["Construire un abri", "Bouger sans cesse", "Créer un groupe"]
+      },
+      {
+        text: "Un allié blessé ralentit le groupe. Tu…",
+        answers: ["L’abandonnes", "L’aides à marcher", "Le portes toi-même"]
+      },
+      {
+        text: "Une tempête approche et tu n’as pas d’abri. Tu…",
+        answers: ["Grimpes dans un arbre", "Creuses un trou", "Continues à marcher"]
+      }
+    ]
+  },
+
+  es: {
+    title: "¿Cuánto tiempo sobrevivirías?",
+    subtitle: "Descúbrelo en 7 preguntas rápidas.",
+    start: "Comenzar el test",
+    questionPrefix: "Pregunta",
+    result: "Sobrevivirías",
+    profile: "Perfil",
+    retry: "Intentar de nuevo",
+    questions: [
+      {
+        text: "¿Sabes encender fuego sin encendedor?",
+        answers: ["Sí", "Lo intentaría", "Ni de broma"]
+      },
+      {
+        text: "Un desconocido te ofrece comida. Tú…",
+        answers: ["Aceptas sin pensar", "Haces preguntas primero", "Rechazas y sigues tu camino"]
+      },
+      {
+        text: "Escuchas un grito en la noche. Tú…",
+        answers: ["Corres hacia él", "Te escondes", "Te paralizas"]
+      },
+      {
+        text: "¿Cuál es tu arma preferida?",
+        answers: ["Bate de béisbol", "Ballesta", "Palabras. Yo negocio."]
+      },
+      {
+        text: "¿Tu estrategia de supervivencia?",
+        answers: ["Construir un refugio", "Seguir moviéndote", "Formar un grupo"]
+      },
+      {
+        text: "Un aliado herido ralentiza al grupo. Tú…",
+        answers: ["Lo dejas atrás", "Lo ayudas a caminar", "Lo cargas tú mismo"]
+      },
+      {
+        text: "Se acerca una tormenta y no tienes refugio. Tú…",
+        answers: ["Subes a un árbol", "Cavas en el suelo", "Sigues caminando"]
+      }
+    ]
+  },
+
+  ru: {
+    title: "Сколько ты продержишься?",
+    subtitle: "Узнай за 7 быстрых вопросов.",
+    start: "Начать тест",
+    questionPrefix: "Вопрос",
+    result: "Ты бы выжил",
+    profile: "Профиль",
+    retry: "Попробовать снова",
+    questions: [
+      {
+        text: "Ты умеешь разжигать огонь без зажигалки?",
+        answers: ["Да", "Постарался бы", "Нет, совсем"]
+      },
+      {
+        text: "Н незнакомец предлагает тебе еду. Ты…",
+        answers: ["Сразу принимаешь", "Спрашиваешь подробности", "Отказываешься и уходишь"]
+      },
+      {
+        text: "Ночью ты слышишь крик. Ты…",
+        answers: ["Бежишь туда", "Прячешься", "Замираешь от страха"]
+      },
+      {
+        text: "Твоё оружие выбора?",
+        answers: ["Бейсбольная бита", "Арбалет", "Слова. Я договариваюсь."]
+      },
+      {
+        text: "Твоя стратегия выживания?",
+        answers: ["Построить укрытие", "Постоянно двигаться", "Найти людей и создать группу"]
+      },
+      {
+        text: "Раненый союзник тормозит группу. Ты…",
+        answers: ["Оставляешь его", "Помогаешь идти", "Несёшь на себе"]
+      },
+      {
+        text: "Грядёт буря, а укрытия нет. Ты…",
+        answers: ["Лезешь на дерево", "Роешь яму", "Продолжаешь путь"]
+      }
+    ]
+  },
+
+  zh: {
+    title: "你能活多久？",
+    subtitle: "7 个问题快速揭晓答案。",
+    start: "开始测试",
+    questionPrefix: "问题",
+    result: "你能活",
+    profile: "角色",
+    retry: "再试一次",
+    questions: [
+      {
+        text: "你会不用打火机生火吗？",
+        answers: ["会", "我会尽力尝试", "不会"]
+      },
+      {
+        text: "一个陌生人给你食物。你…",
+        answers: ["立刻接受", "先问清楚", "拒绝并离开"]
+      },
+      {
+        text: "你在夜晚听到尖叫声。你…",
+        answers: ["跑过去看看", "藏起来", "吓得不动"]
+      },
+      {
+        text: "你首选的武器是？",
+        answers: ["棒球棍", "弩", "语言。我善于谈判。"]
+      },
+      {
+        text: "你的生存策略？",
+        answers: ["建立避难所", "不停移动", "组建团队"]
+      },
+      {
+        text: "一个受伤的同伴拖慢了队伍。你…",
+        answers: ["丢下他", "扶着他走", "自己背着他"]
+      },
+      {
+        text: "暴风雨来临，你还没找到庇护所。你…",
+        answers: ["爬到树上", "挖个坑藏身", "继续往前走"]
       }
     ]
   }

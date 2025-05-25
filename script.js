@@ -66,6 +66,22 @@ const questions = [
       { text: "Keep moving", effect: { physique: 2, mental: 1 } },
       { text: "Find people and create a group", effect: { social: 2, logic: 1 } }
     ]
+  },
+  {
+    text: "You find a wounded ally slowing down the group. Do you…",
+    answers: [
+      { text: "Leave them behind", effect: { mental: -1, logic: 2 } },
+      { text: "Help them walk", effect: { social: 2, physique: -1 } },
+      { text: "Carry them yourself", effect: { physique: 2, mental: -2 } }
+    ]
+  },
+  {
+    text: "A storm is coming. You haven’t found shelter yet. Do you…",
+    answers: [
+      { text: "Climb a tree and wait it out", effect: { logic: -1, mental: 2 } },
+      { text: "Dig into the ground", effect: { physique: 1, logic: 2 } },
+      { text: "Keep walking through it", effect: { mental: -1, physique: 2 } }
+    ]
   }
 ];
 
