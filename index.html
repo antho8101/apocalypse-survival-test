@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SurvivorMeter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- Lang selector -->
+    <div class="lang-switch">
+      <select id="language-select">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="es">ES</option>
+        <!-- d'autres plus tard -->
+      </select>
+    </div>
+
+    <!-- Welcome Screen -->
+    <section class="screen" id="welcome-screen">
+      <h1 id="title">How long would you survive?</h1>
+      <p id="subtitle">Find out in 5 quick questions.</p>
+      <button id="start-button">Start the test</button>
+    </section>
+
+    <!-- Questions Screen -->
+    <section class="screen hidden" id="question-screen">
+      <div id="progress">Question <span id="question-count">1</span>/5</div>
+      <h2 id="question-text">Loading question...</h2>
+      <div class="answers">
+        <button class="answer-button">Answer A</button>
+        <button class="answer-button">Answer B</button>
+        <button class="answer-button hidden">Answer C</button>
+      </div>
+    </section>
+
+    <!-- Loading Screen -->
+<section class="screen hidden" id="loading-screen">
+  <h2 id="loading-text">Analyzing your survival chances...</h2>
+  <div class="loading-bar">
+    <div class="loading-fill"></div>
+  </div>
+</section>
+
+    <!-- Result Screen -->
+    <section class="screen hidden" id="result-screen">
+  <h2 id="result-time">You'd survive 2 days and 6 hours.</h2>
+  <p id="result-profile">Profile: Lone Wolf</p>
+  <div id="result-card">
+  <img id="result-illustration" src="" alt="Profile illustration" class="result-image" />
+  <div class="card-content">
+    <h3 id="card-title">SurvivorMeter</h3>
+    <p id="card-result">You’d survive 3 days.</p>
+    <p id="card-profile">Profile: The Fighter 🥊</p>
+    <p class="card-footer">survivormeter.com</p>
+  </div>
+</div>
+
+<canvas id="capture-canvas" class="hidden"></canvas>
+  <button id="share-button">Share your result</button>
+  <button id="retry-button">Try Again</button>
+</section>
+
+  </div>
+
+  <script src="translations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
