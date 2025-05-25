@@ -47,9 +47,9 @@
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="Readme-files/screenshot1.jpeg" alt="Welcome Screen" width="300px"/>
-  <img src="Readme-files/screenshot2.jpeg" alt="Questions" width="300px"/>
-  <img src="Readme-files/screenshot3.jpeg" alt="Result Card" width="300px"/>
+  <img src="Readme-files/screenshot1.jpeg" alt="Welcome Screen" width="200px"/>
+  <img src="Readme-files/screenshot2.jpeg" alt="Questions" width="200px"/>
+  <img src="Readme-files/screenshot3.jpeg" alt="Result Card" width="200px"/>
 </p>
 
 ---
