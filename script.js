@@ -224,34 +224,13 @@ function showResult() {
   }
 
   const dominantScore = scores[dominant];
+  const durationList = t.survivalDurations[dominant] || t.survivalDurations["multiple"];
   let duration = "";
 
-  if (dominant === "physique") {
-    if (dominantScore <= 3) duration = "1 day.";
-    else if (dominantScore <= 5) duration = "4 days.";
-    else if (dominantScore <= 7) duration = "1 week.";
-    else duration = "months of brutal survival.";
-  } else if (dominant === "logic") {
-    if (dominantScore <= 3) duration = "2 days.";
-    else if (dominantScore <= 5) duration = "1 week.";
-    else if (dominantScore <= 7) duration = "several weeks.";
-    else duration = "years of calculated survival.";
-  } else if (dominant === "mental") {
-    if (dominantScore <= 3) duration = "1 day.";
-    else if (dominantScore <= 5) duration = "1 week.";
-    else if (dominantScore <= 7) duration = "months.";
-    else duration = "long enough to find peace in chaos.";
-  } else if (dominant === "social") {
-    if (dominantScore <= 2) duration = "2 hours. Charisma didn’t help.";
-    else if (dominantScore <= 4) duration = "a day or two.";
-    else if (dominantScore <= 6) duration = "5 days with your group.";
-    else duration = "weeks surrounded by followers.";
-  } else {
-    if (total <= 10) duration = "1 day.";
-    else if (total <= 15) duration = "1 week.";
-    else if (total <= 20) duration = "months.";
-    else duration = "9,752 days. You outlived them all.";
-  }
+  if (dominantScore <= 3) duration = durationList[0];
+  else if (dominantScore <= 5) duration = durationList[1];
+  else if (dominantScore <= 7) duration = durationList[2];
+  else duration = durationList[3];
 
   const profileImages = {
     physique: "assets/images/fighter.jpg",
