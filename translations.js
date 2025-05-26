@@ -1,7 +1,7 @@
 const translations = {
   en: {
     title: "How long would you survive?",
-    subtitle: "Find out in 7 quick questions.",
+    subtitle: "Find out in 8 quick questions.",
     start: "Start the test",
     questionPrefix: "Question",
     result: "You'd survive",
@@ -35,13 +35,17 @@ const translations = {
       {
         text: "A storm is coming. You haven’t found shelter yet. Do you…",
         answers: ["Climb a tree and wait it out", "Dig into the ground", "Keep walking through it"]
+      },
+      {
+        text: "You’re out of water and find a sealed bottle. Do you…",
+        answers: ["Drink it immediately", "Boil it first", "Give it to someone weaker"]
       }
     ]
   },
 
   fr: {
     title: "Combien de temps tu survivrais ?",
-    subtitle: "Découvre-le en 7 questions rapides.",
+    subtitle: "Découvre-le en 8 questions rapides.",
     start: "Commencer le test",
     questionPrefix: "Question",
     result: "Tu survivrais",
@@ -75,13 +79,17 @@ const translations = {
       {
         text: "Une tempête approche et tu n’as pas d’abri. Tu…",
         answers: ["Grimpes dans un arbre", "Creuses un trou", "Continues à marcher"]
+      },
+      {
+        text: "Tu n’as plus d’eau et trouves une bouteille scellée. Tu…",
+        answers: ["La bois immédiatement", "La fais bouillir d’abord", "La donnes à plus faible"]
       }
     ]
   },
 
   es: {
     title: "¿Cuánto tiempo sobrevivirías?",
-    subtitle: "Descúbrelo en 7 preguntas rápidas.",
+    subtitle: "Descúbrelo en 8 preguntas rápidas.",
     start: "Comenzar el test",
     questionPrefix: "Pregunta",
     result: "Sobrevivirías",
@@ -115,13 +123,17 @@ const translations = {
       {
         text: "Se acerca una tormenta y no tienes refugio. Tú…",
         answers: ["Subes a un árbol", "Cavas en el suelo", "Sigues caminando"]
+      },
+      {
+        text: "No tienes agua y encuentras una botella sellada. Tú…",
+        answers: ["La bebes enseguida", "La hierves primero", "Se la das a alguien más débil"]
       }
     ]
   },
 
   ru: {
     title: "Сколько ты продержишься?",
-    subtitle: "Узнай за 7 быстрых вопросов.",
+    subtitle: "Узнай за 8 быстрых вопросов.",
     start: "Начать тест",
     questionPrefix: "Вопрос",
     result: "Ты бы выжил",
@@ -133,7 +145,7 @@ const translations = {
         answers: ["Да", "Постарался бы", "Нет, совсем"]
       },
       {
-        text: "Н незнакомец предлагает тебе еду. Ты…",
+        text: "Незнакомец предлагает тебе еду. Ты…",
         answers: ["Сразу принимаешь", "Спрашиваешь подробности", "Отказываешься и уходишь"]
       },
       {
@@ -155,13 +167,17 @@ const translations = {
       {
         text: "Грядёт буря, а укрытия нет. Ты…",
         answers: ["Лезешь на дерево", "Роешь яму", "Продолжаешь путь"]
+      },
+      {
+        text: "У тебя нет воды, и ты находишь запечатанную бутылку. Ты…",
+        answers: ["Пьёшь сразу", "Кипятишь сначала", "Отдаёшь более слабому"]
       }
     ]
   },
 
   zh: {
     title: "你能活多久？",
-    subtitle: "7 个问题快速揭晓答案。",
+    subtitle: "8 个问题快速揭晓答案。",
     start: "开始测试",
     questionPrefix: "问题",
     result: "你能活",
@@ -195,7 +211,11 @@ const translations = {
       {
         text: "暴风雨来临，你还没找到庇护所。你…",
         answers: ["爬到树上", "挖个坑藏身", "继续往前走"]
+      },
+      {
+        text: "你没水喝，在废弃营地找到一瓶密封的水。你…",
+        answers: ["立刻喝掉", "先烧开", "让给更虚弱的人"]
       }
     ]
   }
-}
+};

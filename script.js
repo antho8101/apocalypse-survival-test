@@ -82,7 +82,15 @@ const questions = [
       { text: "Dig into the ground", effect: { physique: 1, logic: 2 } },
       { text: "Keep walking through it", effect: { mental: -1, physique: 2 } }
     ]
-  }
+  },
+  {
+  text: "You’re out of water and find a sealed bottle in an abandoned camp. Do you…",
+  answers: [
+    { text: "Drink it immediately", effect: { physique: 1, logic: -2 } },
+    { text: "Boil it first", effect: { logic: 2, mental: 1 } },
+    { text: "Give it to someone weaker", effect: { social: 2, mental: -1 } }
+  ]
+}
 ];
 
 // === Init
@@ -184,7 +192,7 @@ function showLoadingThenResult() {
   setTimeout(() => {
     loadingScreen.classList.add("hidden");
     showResult();
-  }, 3000);
+  }, 8000);
 }
 
 function getDominantProfile(scores) {
