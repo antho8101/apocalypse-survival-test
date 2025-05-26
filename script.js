@@ -192,7 +192,7 @@ function showLoadingThenResult() {
   setTimeout(() => {
     loadingScreen.classList.add("hidden");
     showResult();
-  }, 8000);
+  }, 4000);
 }
 
 function getDominantProfile(scores) {
