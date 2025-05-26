@@ -94,7 +94,6 @@ function applyTranslations() {
   document.getElementById("retry-button").innerText = t.retry;
   document.getElementById("loading-text").innerText = t.loading || "Analyzing your survival chances...";
 }
-applyTranslations();
 
 // === Navigation
 document.getElementById("start-button").addEventListener("click", () => {
@@ -107,12 +106,18 @@ document.getElementById("start-button").addEventListener("click", () => {
   startQuiz();
 });
 
+document.getElementById("retry-button").addEventListener("click", () => {
+  location.reload();
+});
+
 // === Lang change
 langSelect.addEventListener("change", () => {
   currentLang = langSelect.value;
   applyTranslations();
   refreshCurrentQuestion();
 });
+
+applyTranslations();
 
 // === Quiz Logic
 function startQuiz() {
@@ -135,7 +140,7 @@ function showQuestion(index) {
     const btn = document.createElement("button");
     btn.classList.add("answer-button");
     btn.innerText = translatedQ.answers[i];
-    btn.style.color = "#76ff03"; // vert clair par défaut
+    btn.style.color = "#76ff03";
     btn.addEventListener("click", () => {
       applyEffects(answer.effect);
       blurAllButtons();
@@ -237,6 +242,7 @@ function showResult() {
   document.getElementById("card-profile").innerText = `${t.profile}: ${profile}`;
 }
 
+// === Screenshot Share
 document.getElementById("share-button").addEventListener("click", () => {
   const card = document.getElementById("result-card");
   const img = document.getElementById("result-illustration");
@@ -259,7 +265,6 @@ function captureCard(card) {
       link.download = "survivor-score.png";
       link.href = canvas.toDataURL("image/png");
       link.click();
-
       card.className = prevClass;
     });
   }, 50);
