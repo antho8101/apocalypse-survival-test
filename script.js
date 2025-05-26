@@ -211,12 +211,17 @@ function showResult() {
   const totalScore =
     scores.mental + scores.physique + scores.logic + scores.social;
 
+  const scaledScore = totalScore * 137; // Amplification pour plus de variété
+
   let duration = "";
-  if (totalScore <= 5) duration = "2 hours.";
-  else if (totalScore <= 10) duration = "1 day and a bit.";
-  else if (totalScore <= 15) duration = "3 or 4 days.";
-  else if (totalScore <= 20) duration = "a week.";
-  else duration = "long enough to rebuild society.";
+  if (scaledScore <= 500) duration = "2 hours.";
+  else if (scaledScore <= 1500) duration = "1 day.";
+  else if (scaledScore <= 3000) duration = "3 days.";
+  else if (scaledScore <= 6000) duration = "a week.";
+  else if (scaledScore <= 9000) duration = "2 months.";
+  else if (scaledScore <= 15000) duration = "over 3 years.";
+  else if (scaledScore <= 30000) duration = "decades.";
+  else duration = "9,752 days.";
 
   const dominant = getDominantProfile(scores);
 
@@ -236,6 +241,14 @@ function showResult() {
     multiple: "The Lone Wolf 🐺"
   };
 
+  // Ajustements narratifs selon le profil
+  if (dominant === "social" && scaledScore < 1500) {
+    duration = "2 hours. Charisma doesn’t stop zombies.";
+  }
+  if (dominant === "multiple" && scaledScore > 20000) {
+    duration = "9,752 days. You outlived them all.";
+  }
+
   const profile = profiles[dominant] || profiles.multiple;
   const image = profileImages[dominant] || profileImages.multiple;
 
@@ -249,6 +262,7 @@ function showResult() {
   document.getElementById("card-result").innerText = `${t.result} ${duration}`;
   document.getElementById("card-profile").innerText = `${t.profile}: ${profile}`;
 }
+
 
 // === Screenshot Share
 document.getElementById("share-button").addEventListener("click", () => {
