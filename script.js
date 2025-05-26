@@ -208,22 +208,50 @@ function showResult() {
 
   screens.result.classList.remove("hidden");
 
-  const totalScore =
-    scores.mental + scores.physique + scores.logic + scores.social;
+  const total = Object.values(scores).reduce((a, b) => a + b, 0);
+  const entries = Object.entries(scores);
+  const max = Math.max(...entries.map(([_, val]) => val));
+  const top = entries.filter(([_, val]) => val === max);
 
-  const scaledScore = totalScore * 137; // Amplification pour plus de variété
+  let dominant;
+  const isBalanced = top.length >= 2 && top.every(([_, val]) => max - val <= 2);
+  const isAllHigh = entries.every(([_, val]) => val >= 6);
 
+  if (isBalanced && isAllHigh) {
+    dominant = "multiple";
+  } else {
+    dominant = top[0][0];
+  }
+
+  const dominantScore = scores[dominant];
   let duration = "";
-  if (scaledScore <= 500) duration = "2 hours.";
-  else if (scaledScore <= 1500) duration = "1 day.";
-  else if (scaledScore <= 3000) duration = "3 days.";
-  else if (scaledScore <= 6000) duration = "a week.";
-  else if (scaledScore <= 9000) duration = "2 months.";
-  else if (scaledScore <= 15000) duration = "over 3 years.";
-  else if (scaledScore <= 30000) duration = "decades.";
-  else duration = "9,752 days.";
 
-  const dominant = getDominantProfile(scores);
+  if (dominant === "physique") {
+    if (dominantScore <= 3) duration = "1 day.";
+    else if (dominantScore <= 5) duration = "4 days.";
+    else if (dominantScore <= 7) duration = "1 week.";
+    else duration = "months of brutal survival.";
+  } else if (dominant === "logic") {
+    if (dominantScore <= 3) duration = "2 days.";
+    else if (dominantScore <= 5) duration = "1 week.";
+    else if (dominantScore <= 7) duration = "several weeks.";
+    else duration = "years of calculated survival.";
+  } else if (dominant === "mental") {
+    if (dominantScore <= 3) duration = "1 day.";
+    else if (dominantScore <= 5) duration = "1 week.";
+    else if (dominantScore <= 7) duration = "months.";
+    else duration = "long enough to find peace in chaos.";
+  } else if (dominant === "social") {
+    if (dominantScore <= 2) duration = "2 hours. Charisma didn’t help.";
+    else if (dominantScore <= 4) duration = "a day or two.";
+    else if (dominantScore <= 6) duration = "5 days with your group.";
+    else duration = "weeks surrounded by followers.";
+  } else {
+    if (total <= 10) duration = "1 day.";
+    else if (total <= 15) duration = "1 week.";
+    else if (total <= 20) duration = "months.";
+    else duration = "9,752 days. You outlived them all.";
+  }
 
   const profileImages = {
     physique: "assets/images/fighter.jpg",
@@ -241,14 +269,6 @@ function showResult() {
     multiple: "The Lone Wolf 🐺"
   };
 
-  // Ajustements narratifs selon le profil
-  if (dominant === "social" && scaledScore < 1500) {
-    duration = "2 hours. Charisma doesn’t stop zombies.";
-  }
-  if (dominant === "multiple" && scaledScore > 20000) {
-    duration = "9,752 days. You outlived them all.";
-  }
-
   const profile = profiles[dominant] || profiles.multiple;
   const image = profileImages[dominant] || profileImages.multiple;
 
@@ -262,7 +282,6 @@ function showResult() {
   document.getElementById("card-result").innerText = `${t.result} ${duration}`;
   document.getElementById("card-profile").innerText = `${t.profile}: ${profile}`;
 }
-
 
 // === Screenshot Share
 document.getElementById("share-button").addEventListener("click", () => {
