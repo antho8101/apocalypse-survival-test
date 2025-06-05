@@ -12,10 +12,15 @@ body {
   color: #eee;
   font-family: 'Share Tech Mono', monospace;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+}
+
+main {
+  flex: 1; /* ⬅️ Pousse le footer vers le bas */
 }
 
 .app-container {
@@ -213,6 +218,31 @@ select {
 
 .card-glow {
   animation: cardGlow 1.2s ease-out;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+footer a {
+  color: #76ff03;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+  opacity: 1;
+}
+
+footer a::after {
+  content: "↗";
+  font-size: 10px;
+  margin-left: 4px;
+  opacity: 0.5;
 }
 
 /* Supprime les effets actifs sur mobile */
